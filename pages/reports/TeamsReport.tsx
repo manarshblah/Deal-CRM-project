@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PageBanner from '../../components/layout/PageBanner';
 import { useI18n } from '../../contexts/I18nContext';
@@ -46,23 +45,23 @@ const TeamsReport: React.FC = () => {
                  <table className="w-full text-sm text-start text-gray-500">
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50">
                         <tr>
-                            <th scope="col" className="px-6 py-3">{t('team')}</th>
-                            <th scope="col" className="px-6 py-3">{t('total_leads')}</th>
-                            <th scope="col" className="px-6 py-3">{t('touched_leads_report')}</th>
-                            <th scope="col" className="px-6 py-3">{t('meetings_report')}</th>
-                            <th scope="col" className="px-6 py-3">{t('deals_report')}</th>
-                            <th scope="col" className="px-6 py-3">{t('total_value_report')}</th>
+                            <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('team')}</th>
+                            <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('total_leads')}</th>
+                            <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('touched_leads_report')}</th>
+                            <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('meetings_report')}</th>
+                            <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('deals_report')}</th>
+                            <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('total_value_report')}</th>
                         </tr>
                     </thead>
                     <tbody>
                         {mockTeamsReportData.map((row) => (
                             <tr key={row.team} className="bg-white border-b hover:bg-gray-50">
-                                <td className="px-6 py-4 font-semibold text-gray-900">{row.team}</td>
-                                <td className="px-6 py-4">{row.leads}</td>
-                                <td className="px-6 py-4">{row.touched}</td>
-                                <td className="px-6 py-4">{row.meetings}</td>
-                                <td className="px-6 py-4">{row.deals}</td>
-                                <td className="px-6 py-4">EGP {row.value.toLocaleString()}</td>
+                                <td className="px-6 py-4 font-semibold text-gray-900 whitespace-nowrap">{row.team}</td>
+                                <td className="px-6 py-4 whitespace-nowrap">{row.leads}</td>
+                                <td className="px-6 py-4 whitespace-nowrap">{row.touched}</td>
+                                <td className="px-6 py-4 whitespace-nowrap">{row.meetings}</td>
+                                <td className="px-6 py-4 whitespace-nowrap">{row.deals}</td>
+                                <td className="px-6 py-4 whitespace-nowrap">EGP {row.value.toLocaleString()}</td>
                             </tr>
                         ))}
                     </tbody>

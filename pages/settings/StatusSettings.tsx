@@ -79,35 +79,35 @@ const StatusSettings: React.FC = () => {
                     <table className="w-full text-sm text-start text-gray-500">
                         <thead className="text-xs text-gray-700 uppercase bg-gray-50">
                             <tr>
-                                <th scope="col" className="px-6 py-3 min-w-[150px]">{t('status_name')}</th>
-                                <th scope="col" className="px-6 py-3 min-w-[200px]">{t('description')}</th>
-                                <th scope="col" className="px-6 py-3 min-w-[150px]">{t('category')}</th>
-                                <th scope="col" className="px-6 py-3">{t('color')}</th>
-                                <th scope="col" className="px-6 py-3">{t('actions')}</th>
+                                <th scope="col" className="px-6 py-3 whitespace-nowrap min-w-48">{t('status_name')}</th>
+                                <th scope="col" className="px-6 py-3 whitespace-nowrap min-w-64">{t('description')}</th>
+                                <th scope="col" className="px-6 py-3 whitespace-nowrap min-w-48">{t('category')}</th>
+                                <th scope="col" className="px-6 py-3 whitespace-nowrap min-w-48">{t('color')}</th>
+                                <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('actions')}</th>
                             </tr>
                         </thead>
                         <tbody>
                             {mockStatuses.map((status) => (
                                 <tr key={status.id} className="bg-white border-b last:border-b-0">
-                                    <td className="px-6 py-4">
+                                    <td className="px-6 py-4 whitespace-nowrap">
                                         <input type="text" defaultValue={status.name} className="w-full p-2 border rounded-md" />
                                         {status.isDefault && (
                                             <p className="text-xs text-blue-600 mt-1">{t('default_status_no_delete')}</p>
                                         )}
                                     </td>
-                                    <td className="px-6 py-4">
+                                    <td className="px-6 py-4 whitespace-nowrap">
                                         <input type="text" defaultValue={status.description} className="w-full p-2 border rounded-md" />
                                     </td>
-                                    <td className="px-6 py-4">
+                                    <td className="px-6 py-4 whitespace-nowrap">
                                         <select defaultValue={status.category} className="w-full p-2 border rounded-md bg-white">
                                             <option>Active</option>
                                             <option>Follow Up</option>
                                         </select>
                                     </td>
-                                    <td className="px-6 py-4">
+                                    <td className="px-6 py-4 whitespace-nowrap">
                                         <ColorPicker selected={status.color} />
                                     </td>
-                                    <td className="px-6 py-4">
+                                    <td className="px-6 py-4 whitespace-nowrap">
                                         <div className="flex items-center gap-4">
                                             <button className="text-gray-400 hover:text-brand-purple"><FiEye /></button>
                                             {!status.isDefault && <button className="text-gray-400 hover:text-red-500"><FiTrash2 /></button>}

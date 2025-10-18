@@ -11,7 +11,7 @@ const Login: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const { login } = useAuth();
-  const { t, language, setLanguage } = useI18n();
+  const { t, language, setLanguage, dir } = useI18n();
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,10 +28,10 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex">
+    <div className={`min-h-screen flex flex-col lg:flex-row ${dir === 'rtl' ? 'lg:flex-row-reverse' : ''}`}>
       {/* Left Panel */}
-      <div className="w-1/2 bg-brand-purple text-white flex flex-col justify-center items-center p-12 relative">
-         <div className="text-center max-w-md">
+      <div className="w-full lg:w-1/2 bg-brand-purple text-white flex flex-col justify-center items-center lg:items-start p-6 md:p-12 relative min-h-[300px]">
+         <div className="text-center lg:text-start max-w-md">
             <h2 className="text-4xl font-bold mb-4">{t('hello_deal_crm')}</h2>
             <p className="text-lg text-purple-200">
              {t('login_desc')}
@@ -45,7 +45,7 @@ const Login: React.FC = () => {
       </div>
 
       {/* Right Panel */}
-      <div className="w-1/2 bg-white flex flex-col justify-center items-center p-12">
+      <div className="w-full lg:w-1/2 bg-white flex flex-col justify-center items-center p-8 sm:p-12">
         <div className="w-full max-w-sm">
           <h2 className="text-3xl font-bold text-gray-800 mb-2">{t('welcome_back')}</h2>
           <p className="text-gray-500 mb-8">{t('login_prompt')}</p>

@@ -6,7 +6,7 @@ import {
     FiGrid, FiUsers, FiTarget, FiActivity, FiBox, FiDollarSign, 
     FiBarChart2, FiBriefcase, FiSettings, FiCalendar, FiMessageSquare,
     FiChevronDown, FiChevronRight, FiUserCheck, FiStar, FiRefreshCw, 
-    FiThermometer, FiArchive, FiPackage, FiVolume2, FiBarChart
+    FiThermometer, FiArchive, FiPackage, FiVolume2, FiBarChart, FiChevronLeft
 } from 'react-icons/fi';
 import { useI18n } from '../../contexts/I18nContext';
 
@@ -96,7 +96,12 @@ const Sidebar: React.FC = () => {
   const sidebarClasses = `
     bg-brand-purple text-white flex flex-col fixed h-full z-50
     transition-transform duration-300 ease-in-out
-    ${isCollapsed ? 'w-64 -translate-x-full lg:w-20 lg:translate-x-0' : 'w-64 translate-x-0'}
+    ${dir === 'rtl' ? 'right-0' : 'left-0'}
+    ${isCollapsed ? 'lg:w-20' : 'w-64'}
+    ${isCollapsed 
+        ? (dir === 'rtl' ? 'translate-x-full lg:translate-x-0' : '-translate-x-full lg:translate-x-0') 
+        : 'translate-x-0'
+    }
   `;
 
   return (
@@ -116,7 +121,7 @@ const Sidebar: React.FC = () => {
                 <span className="text-xl">{item.icon}</span>
                 <span className={`ms-4 font-medium flex-1 text-start ${isCollapsed && 'lg:hidden'}`}>{item.label}</span>
                 <div className={`${isCollapsed && 'lg:hidden'}`}>
-                    {openMenu === item.label ? <FiChevronDown /> : (dir === 'rtl' ? <FiChevronRight style={{ transform: 'rotate(180deg)'}}/> : <FiChevronRight />)}
+                    {openMenu === item.label ? <FiChevronDown /> : (dir === 'rtl' ? <FiChevronLeft /> : <FiChevronRight />)}
                 </div>
               </button>
               {!isCollapsed && openMenu === item.label && (

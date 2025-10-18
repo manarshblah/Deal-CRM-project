@@ -1,4 +1,3 @@
-
 import React from 'react';
 import type { Lead } from '../../types';
 import { useI18n } from '../../contexts/I18nContext';
@@ -31,29 +30,31 @@ const LeadTable: React.FC<LeadTableProps> = ({ leads }) => {
           <table className="w-full text-sm text-start text-gray-500">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50">
               <tr>
-                <th scope="col" className="px-6 py-3">{t('lead_name')}</th>
-                <th scope="col" className="px-6 py-3">{t('phone')}</th>
-                <th scope="col" className="px-6 py-3">{t('status')}</th>
-                <th scope="col" className="px-6 py-3">{t('user')}</th>
-                <th scope="col" className="px-6 py-3">{t('date')}</th>
-                <th scope="col" className="px-6 py-3">{t('actions')}</th>
+                <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('lead_name')}</th>
+                <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('phone')}</th>
+                <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('status')}</th>
+                <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('user')}</th>
+                <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('date')}</th>
+                <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('actions')}</th>
               </tr>
             </thead>
             <tbody>
               {leads.map((lead: Lead) => (
                 <tr key={lead.id} className="bg-white border-b">
                   <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">{lead.name}</td>
-                  <td className="px-6 py-4">{lead.phone}</td>
-                  <td className="px-6 py-4">
+                  <td className="px-6 py-4 whitespace-nowrap">{lead.phone}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">
                     <span className={`px-2 py-1 text-xs rounded-full ${getStatusColor(lead.status)}`}>
                       {lead.status}
                     </span>
                   </td>
-                  <td className="px-6 py-4">{lead.assignedTo}</td>
-                  <td className="px-6 py-4">{lead.lastContacted}</td>
-                  <td className="px-6 py-4 flex items-center gap-4">
-                    <button className="text-gray-500 hover:text-brand-purple"><FiEdit /></button>
-                    <button className="text-gray-500 hover:text-red-500"><FiTrash2 /></button>
+                  <td className="px-6 py-4 whitespace-nowrap">{lead.assignedTo}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">{lead.lastContacted}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="flex items-center gap-4">
+                      <button className="text-gray-500 hover:text-brand-purple"><FiEdit /></button>
+                      <button className="text-gray-500 hover:text-red-500"><FiTrash2 /></button>
+                    </div>
                   </td>
                 </tr>
               ))}

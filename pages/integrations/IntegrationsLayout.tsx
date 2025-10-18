@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import PageBanner from '../../components/layout/PageBanner';
@@ -19,7 +18,7 @@ const IntegrationsLayout: React.FC = () => {
         <div>
             <PageBanner title={t('integrations') || 'Integrations'} />
             <div className="flex justify-center mb-6">
-                <div className="flex items-center bg-gray-200 rounded-full p-1">
+                <div className="flex flex-wrap justify-center items-center bg-gray-200 rounded-full p-1 gap-1">
                     {tabs.map(tab => (
                         <NavLink
                             key={tab.path}

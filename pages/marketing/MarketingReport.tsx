@@ -49,21 +49,21 @@ const MarketingReport: React.FC = () => {
                     <table className="w-full text-sm text-start text-gray-500">
                         <thead className="text-xs text-gray-700 uppercase bg-gray-50">
                             <tr>
-                                <th scope="col" className="px-6 py-3">{t('campaign_name')}</th>
-                                <th scope="col" className="px-6 py-3">{t('platform')}</th>
-                                <th scope="col" className="px-6 py-3">{t('leads')}</th>
-                                <th scope="col" className="px-6 py-3">{t('cost')}</th>
-                                <th scope="col" className="px-6 py-3">{t('cost_per_lead')}</th>
+                                <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('campaign_name')}</th>
+                                <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('platform')}</th>
+                                <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('leads')}</th>
+                                <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('cost')}</th>
+                                <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('cost_per_lead')}</th>
                             </tr>
                         </thead>
                         <tbody>
                             {mockCampaigns.map((campaign) => (
                                 <tr key={campaign.id} className="bg-white border-b hover:bg-gray-50">
-                                    <td className="px-6 py-4 font-semibold text-gray-900">{campaign.name}</td>
-                                    <td className="px-6 py-4">{campaign.platform}</td>
-                                    <td className="px-6 py-4">{campaign.leads}</td>
-                                    <td className="px-6 py-4">$ {campaign.cost.toLocaleString()}</td>
-                                    <td className="px-6 py-4">$ {(campaign.cost / campaign.leads).toFixed(2)}</td>
+                                    <td className="px-6 py-4 font-semibold text-gray-900 whitespace-nowrap">{campaign.name}</td>
+                                    <td className="px-6 py-4 whitespace-nowrap">{campaign.platform}</td>
+                                    <td className="px-6 py-4 whitespace-nowrap">{campaign.leads}</td>
+                                    <td className="px-6 py-4 whitespace-nowrap">$ {campaign.cost.toLocaleString()}</td>
+                                    <td className="px-6 py-4 whitespace-nowrap">$ {(campaign.cost / campaign.leads).toFixed(2)}</td>
                                 </tr>
                             ))}
                         </tbody>

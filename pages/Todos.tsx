@@ -38,15 +38,15 @@ const Todos: React.FC = () => {
     return (
         <div>
             <PageBanner title={t('all_todos')} />
-            <div className="flex justify-between items-center mb-6">
-                <div className="flex items-center bg-gray-200 rounded-full p-1">
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-6">
+                <div className="flex items-center bg-gray-200 rounded-full p-1 w-full sm:w-auto justify-center">
                     <button onClick={() => setActiveFilter('all')} className={`px-6 py-2 text-sm font-semibold rounded-full transition-colors ${activeFilter === 'all' ? 'bg-brand-purple text-white' : 'text-gray-600'}`}>{t('all')}</button>
                     <button onClick={() => setActiveFilter('meeting')} className={`px-6 py-2 text-sm font-semibold rounded-full transition-colors ${activeFilter === 'meeting' ? 'bg-brand-purple text-white' : 'text-gray-600'}`}>{t('meeting')}</button>
                     <button onClick={() => setActiveFilter('call')} className={`px-6 py-2 text-sm font-semibold rounded-full transition-colors ${activeFilter === 'call' ? 'bg-brand-purple text-white' : 'text-gray-600'}`}>{t('call')}</button>
                 </div>
                  <button 
                   onClick={() => setIsModalOpen(true)}
-                  className="flex items-center gap-2 px-4 py-2 bg-brand-purple text-white rounded-lg hover:bg-purple-700 transition-colors"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2 bg-brand-purple text-white rounded-lg hover:bg-purple-700 transition-colors"
                 >
                   <FiPlus /> {t('add_todo')}
                 </button>

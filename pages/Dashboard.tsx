@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import Card from '../components/ui/Card';
@@ -71,25 +70,25 @@ const Dashboard: React.FC = () => {
                     <table className="w-full text-sm text-start text-gray-500">
                         <thead className="text-xs text-gray-700 uppercase bg-gray-50/50">
                             <tr>
-                                <th scope="col" className="px-6 py-3">{t('date')}</th>
-                                <th scope="col" className="px-6 py-3">{t('agent')}</th>
-                                <th scope="col" className="px-6 py-3">{t('client')}</th>
-                                <th scope="col" className="px-6 py-3">{t('stage')}</th>
-                                <th scope="col" className="px-6 py-3">{t('feedback')}</th>
+                                <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('date')}</th>
+                                <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('agent')}</th>
+                                <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('client')}</th>
+                                <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('stage')}</th>
+                                <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('feedback')}</th>
                             </tr>
                         </thead>
                         <tbody>
                             {mockFeedbacks.map((feedback: Feedback) => (
                                 <tr key={feedback.id} className="bg-white border-b">
                                     <td className="px-6 py-4 text-gray-800 whitespace-nowrap">{feedback.date}</td>
-                                    <td className="px-6 py-4">{feedback.agent}</td>
-                                    <td className="px-6 py-4 text-gray-800">{feedback.client}</td>
-                                    <td className="px-6 py-4">
+                                    <td className="px-6 py-4 whitespace-nowrap">{feedback.agent}</td>
+                                    <td className="px-6 py-4 text-gray-800 whitespace-nowrap">{feedback.client}</td>
+                                    <td className="px-6 py-4 whitespace-nowrap">
                                       <span className={`px-3 py-1 text-xs font-medium rounded-full ${stageColorMap[feedback.stageColor]}`}>
                                         {t(feedback.stage.toLowerCase().replace(' ','_')) || feedback.stage}
                                       </span>
                                     </td>
-                                    <td className="px-6 py-4">{feedback.feedbackText}</td>
+                                    <td className="px-6 py-4 whitespace-nowrap">{feedback.feedbackText}</td>
                                 </tr>
                             ))}
                         </tbody>

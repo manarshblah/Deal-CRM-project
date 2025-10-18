@@ -16,7 +16,7 @@ const AllLeads: React.FC = () => {
       <div className="flex justify-end mb-4">
         <button 
           onClick={() => setIsModalOpen(true)}
-          className="flex items-center gap-2 px-4 py-2 bg-brand-purple text-white rounded-lg hover:bg-purple-700 transition-colors"
+          className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2 bg-brand-purple text-white rounded-lg hover:bg-purple-700 transition-colors"
         >
           <FiPlus /> {t('create_lead')}
         </button>

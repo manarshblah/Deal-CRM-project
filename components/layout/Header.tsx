@@ -48,7 +48,7 @@ const Header: React.FC = () => {
           <FiMenu size={20} />
         </button>
       </div>
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-3 sm:gap-6">
         <button className="text-gray-600 relative">
           <FiBell size={20} />
           <span className="absolute -top-1 -right-1 block h-2 w-2 rounded-full bg-red-500"></span>

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import PageBanner from '../../components/layout/PageBanner';
 import { mockUsers } from '../../data/mockData';
@@ -11,9 +10,9 @@ const UserCard: React.FC<{ user: User; onEdit: (user: User) => void; }> = ({ use
     const { t, dir } = useI18n();
     const [actionsOpen, setActionsOpen] = useState(false);
     return (
-        <div className="bg-white p-4 rounded-lg shadow-sm border flex flex-col sm:flex-row items-center justify-between">
-            <div className="flex items-center">
-                <div className={`w-12 h-12 rounded-full bg-brand-purple text-white flex items-center justify-center font-bold text-xl ${dir === 'rtl' ? 'ms-4' : 'me-4'}`}>
+        <div className="bg-white p-4 rounded-lg shadow-sm border flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center w-full sm:w-auto flex-col sm:flex-row text-center sm:text-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-brand-purple text-white flex items-center justify-center font-bold text-xl flex-shrink-0">
                     {user.avatar}
                 </div>
                 <div>
@@ -21,8 +20,8 @@ const UserCard: React.FC<{ user: User; onEdit: (user: User) => void; }> = ({ use
                     <span className="px-2 py-1 bg-yellow-200 text-yellow-800 text-xs font-medium rounded-full">{t(user.role.toLowerCase() as any)}</span>
                 </div>
             </div>
-            <div className="flex items-center gap-4 mt-4 sm:mt-0">
-                <span>{user.phone}</span>
+            <div className="w-full sm:w-auto flex flex-wrap items-center justify-center sm:justify-end gap-x-4 gap-y-2">
+                <span className="whitespace-nowrap">{user.phone}</span>
                 <button className="flex items-center gap-2 px-3 py-1 bg-gray-100 rounded-full text-sm hover:bg-gray-200">
                     <FiPhone size={14}/> {t('call')}
                 </button>
@@ -66,8 +65,8 @@ const Users: React.FC = () => {
     return (
         <div>
             <PageBanner title={t('users_count', { count: users.length })} />
-            <div className="flex justify-between items-center mb-6">
-                <button onClick={handleAddUser} className="flex items-center gap-2 px-4 py-2 bg-brand-purple text-white rounded-lg hover:bg-purple-700 transition-colors">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+                <button onClick={handleAddUser} className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2 bg-brand-purple text-white rounded-lg hover:bg-purple-700 transition-colors">
                     <FiPlus /> {t('add_user')}
                 </button>
                  <button className="flex items-center gap-2 text-gray-600">

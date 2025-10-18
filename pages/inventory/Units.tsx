@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import PageBanner from '../../components/layout/PageBanner';
 import { useI18n } from '../../contexts/I18nContext';
@@ -27,21 +26,21 @@ const Units: React.FC = () => {
           <table className="w-full text-sm text-start text-gray-500">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50">
               <tr>
-                <th scope="col" className="px-6 py-3">{t('unit')}</th>
-                <th scope="col" className="px-6 py-3">{t('project')}</th>
-                <th scope="col" className="px-6 py-3">{t('developer')}</th>
-                <th scope="col" className="px-6 py-3">{t('price')}</th>
-                <th scope="col" className="px-6 py-3">{t('status')}</th>
+                <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('unit')}</th>
+                <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('project')}</th>
+                <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('developer')}</th>
+                <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('price')}</th>
+                <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('status')}</th>
               </tr>
             </thead>
             <tbody>
               {mockUnits.map((unit: Unit) => (
                 <tr key={unit.id} className="bg-white border-b">
-                  <td className="px-6 py-4 font-medium text-gray-900">{unit.name}</td>
-                  <td className="px-6 py-4">{unit.project}</td>
-                  <td className="px-6 py-4">{unit.developer}</td>
-                  <td className="px-6 py-4">EGP {unit.price.toLocaleString()}</td>
-                  <td className="px-6 py-4">{unit.status}</td>
+                  <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">{unit.name}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">{unit.project}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">{unit.developer}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">EGP {unit.price.toLocaleString()}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">{unit.status}</td>
                 </tr>
               ))}
             </tbody>

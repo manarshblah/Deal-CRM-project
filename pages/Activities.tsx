@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import PageBanner from '../components/layout/PageBanner';
 import { useI18n } from '../contexts/I18nContext';
@@ -15,7 +14,7 @@ const Activities: React.FC = () => {
     <div>
       <PageBanner title={t('activities')} />
       <div className="bg-white p-4 rounded-lg shadow-sm">
-        <div className="flex justify-between items-start mb-6">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-4 mb-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 flex-grow">
               <div>
                 <label className="text-sm font-medium text-gray-600">{t('users')}</label>
@@ -49,10 +48,10 @@ const Activities: React.FC = () => {
                 </select>
               </div>
             </div>
-             <div className="ms-4 flex-shrink-0">
+             <div className="w-full lg:w-auto flex-shrink-0">
                 <button 
                   onClick={() => setIsModalOpen(true)}
-                  className="flex items-center gap-2 px-4 py-2 bg-brand-purple text-white rounded-lg hover:bg-purple-700 transition-colors"
+                  className="w-full lg:w-auto flex items-center justify-center gap-2 px-4 py-2 bg-brand-purple text-white rounded-lg hover:bg-purple-700 transition-colors"
                 >
                   <FiPlus /> {t('add_activity')}
                 </button>
@@ -68,21 +67,21 @@ const Activities: React.FC = () => {
                 <table className="w-full text-sm text-start text-gray-500">
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50">
                         <tr>
-                            <th scope="col" className="px-6 py-3">{t('user')}</th>
-                            <th scope="col" className="px-6 py-3">{t('activity_type')}</th>
-                            <th scope="col" className="px-6 py-3">{t('lead_name')}</th>
-                            <th scope="col" className="px-6 py-3">{t('date')}</th>
-                            <th scope="col" className="px-6 py-3">{t('details')}</th>
+                            <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('user')}</th>
+                            <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('activity_type')}</th>
+                            <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('lead_name')}</th>
+                            <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('date')}</th>
+                            <th scope="col" className="px-6 py-3 whitespace-nowrap">{t('details')}</th>
                         </tr>
                     </thead>
                     <tbody>
                         {mockActivities.map((activity: Activity) => (
                             <tr key={activity.id} className="bg-white border-b">
-                                <td className="px-6 py-4 font-medium text-gray-900 capitalize">{activity.user}</td>
-                                <td className="px-6 py-4">{activity.type}</td>
-                                <td className="px-6 py-4">{activity.leadName}</td>
-                                <td className="px-6 py-4">{activity.date}</td>
-                                <td className="px-6 py-4">{activity.details}</td>
+                                <td className="px-6 py-4 font-medium text-gray-900 capitalize whitespace-nowrap">{activity.user}</td>
+                                <td className="px-6 py-4 whitespace-nowrap">{activity.type}</td>
+                                <td className="px-6 py-4 whitespace-nowrap">{activity.leadName}</td>
+                                <td className="px-6 py-4 whitespace-nowrap">{activity.date}</td>
+                                <td className="px-6 py-4 whitespace-nowrap">{activity.details}</td>
                             </tr>
                         ))}
                     </tbody>
