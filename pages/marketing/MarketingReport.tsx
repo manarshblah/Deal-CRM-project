@@ -21,7 +21,7 @@ const MarketingReport: React.FC = () => {
                  <Card title={t('cost_per_lead')} value={`$${averageCPL.toFixed(2)}`} icon={<FiTrendingUp size={24}/>} colorClass="bg-brand-green-light" />
             </div>
             
-             <div className="bg-white p-6 rounded-lg shadow-sm">
+             <div className="bg-white p-6 rounded-lg shadow-sm mobile-scroll">
                 <div className="bg-brand-purple-light p-4 rounded-lg mb-6">
                     <h3 className="font-semibold mb-3">{t('filter_reports')}</h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
