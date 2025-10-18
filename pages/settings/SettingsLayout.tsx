@@ -18,7 +18,7 @@ const SettingsLayout: React.FC = () => {
     return (
         <div>
             <PageBanner title={t('settings')} />
-            <div className="flex justify-center mb-6">
+            <div className="flex justify-center mb-6 mobile-scroll">
                 <div className="flex flex-wrap justify-center items-center bg-gray-200 rounded-full p-1 gap-1">
                     {tabs.map(tab => (
                         <NavLink

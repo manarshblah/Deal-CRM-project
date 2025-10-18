@@ -98,3 +98,7 @@ input:checked+.slider:before {
     scrollbar-width: none;
   }
 }
+
+.mobile-scroll {
+  overflow-x: auto;
+}

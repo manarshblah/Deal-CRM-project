@@ -41,7 +41,7 @@ const Dashboard: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2 bg-white p-6 rounded-lg shadow-sm">
+        <div className="lg:col-span-2 bg-white p-6 rounded-lg shadow-sm mobile-scroll">
           <h3 className="font-bold text-lg mb-4">{t('week_leads')}</h3>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={chartData}>
