@@ -94,7 +94,7 @@ const Sidebar: React.FC = () => {
   };
 
   const sidebarClasses = `
-    bg-brand-purple text-white flex flex-col fixed h-full z-50
+    bg-brand-purple text-white flex flex-col fixed h-full z-[60]
     transition-transform duration-300 ease-in-out
     ${dir === 'rtl' ? 'right-0' : 'left-0'}
     ${isCollapsed ? 'lg:w-20' : 'w-64'}
